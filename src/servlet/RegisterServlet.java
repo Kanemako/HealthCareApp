@@ -36,7 +36,7 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("login.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -85,7 +85,7 @@ public class RegisterServlet extends HttpServlet {
 		if (errorMsg.length() == 0) {
 			User user = new User(pass1, name, gender, birthday, age);
 			new AddUser().addSort(user, userList);
-			dispatcher = request.getRequestDispatcher("index.jsp");
+			dispatcher = request.getRequestDispatcher("login.jsp");
 		} else {
 			request.setAttribute("registerErrorMsg", errorMsg);
 			dispatcher = request.getRequestDispatcher("register.jsp");

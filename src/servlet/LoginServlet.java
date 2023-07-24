@@ -3,6 +3,7 @@ package servlet;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Todo;
 import bean.User;
+import model.GetUsersLogic;
 import model.LoginModel;
 import model.TodoModel;
 
@@ -21,20 +23,23 @@ import model.TodoModel;
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher dispatcher = request.getRequestDispatcher("register.jsp");
+		dispatcher.forward(request, response);
+	}
+
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// パラメータ取得
-		String name = request.getParameter("name");
+		int id = Integer.parseInt(request.getParameter("id"));
 		String pass = request.getParameter("pass");
-		String gender = request.getParameter("gender");
-		String birthday = request.getParameter("birthday");
-		int age = Integer.parseInt(request.getParameter("age"));
 
 		// パラメータチェック
 		StringBuilder errorMsg = new StringBuilder();
-		if (name == null || name.length() == 0) {
-			errorMsg.append("ユーザー名が入力されていません<br>");
+		if (id <= 0) {
+			errorMsg.append("ユーザーIDが入力されていません<br>");
 		}
 		if (pass == null || pass.length() == 0) {
 			errorMsg.append("パスワードが入力されていません<br>");
@@ -48,11 +53,14 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// 処理
-		User user = new User(pass, name, gender, birthday, age);
-		boolean result = new LoginModel().auth(user);
+		GetUsersLogic getUsersLogic = new GetUsersLogic();
+		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
+
+		User user = new User(id, pass);
+		user = new LoginModel().auth(user, userList);
 
 		// 結果
-		if (result) {
+		if (user != null) {
 			// 認証成功
 			HttpSession session = request.getSession();
 			session.setAttribute("user", user);

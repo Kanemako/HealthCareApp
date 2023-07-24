@@ -10,7 +10,9 @@ public class User implements Serializable {
 	private int userid, age;
 	private String name, pass, gender, birthday;
 
-	public User() {
+	public User(int id, String pass) {
+		this.userid = id;
+		this.pass = pass;
 	}
 
 	public User(String pass, String name, String gender, String birthday, int age) {
