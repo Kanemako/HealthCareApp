@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <title>ヘルスケア - ログイン画面</title>
 
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/icon.png">
 
 <!-- CDN : Bootstrap CSS -->
 <link
@@ -26,7 +26,7 @@
 <div class="container">
 
 <header>
-	<h1>へるすけあ</h1>
+	<h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100">APOLLO</h1>
 </header>
 
 <section>

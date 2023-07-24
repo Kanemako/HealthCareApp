@@ -7,9 +7,9 @@
 
 <head>
 <meta charset="UTF-8">
-<title>ヘルスケア - メイン画面</title>
+<title>Apollo - メイン画面</title>
 
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/icon.png">
 
 <!-- CDN : Bootstrap CSS -->
 <link
@@ -27,12 +27,12 @@
 <div class="container">
 
 <header>
-	<h1><a href="MainServlet">へるすけあ</a></h1>
+	<h1><a href="MainServlet">APOLLO</a></h1>
 	<a href="LogoutServlet" class="block-right">ログアウト</a>
 </header>
 
 <section>
-	<img class="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+	<img class="profile-img" src="images/user_image.png" />
 	<h4>${user.name}</h4>
 </section>
 
