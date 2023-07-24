@@ -7,17 +7,35 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
-	/** ユーザ名 */
-	private String name;
-	/** パスワード */
-	private String pass;
+	private int userid, age;
+	private String name, pass, gender, birthday;
 
 	public User() {
 	}
 
-	public User(String name, String pass) {
-		this.name = name;
+	public User(String pass, String name, String gender, String birthday, int age) {
 		this.pass = pass;
+		this.name = name;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.age = age;
+	}
+
+	public User(int id, String pass, String name, String gender, String birthday, int age) {
+		this.userid = id;
+		this.pass = pass;
+		this.name = name;
+		this.gender = gender;
+		this.birthday = birthday;
+		this.age = age;
+	}
+
+	public int getUserid() {
+		return userid;
+	}
+
+	public void setUserid(int userid) {
+		this.userid = userid;
 	}
 
 	public String getName() {
@@ -34,6 +52,30 @@ public class User implements Serializable {
 
 	public void setPass(String pass) {
 		this.pass = pass;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getBirthday() {
+		return birthday;
+	}
+
+	public void setBirthday(String birthday) {
+		this.birthday = birthday;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
 	}
 
 }
