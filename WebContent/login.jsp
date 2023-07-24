@@ -6,9 +6,11 @@
 
 <head>
 <meta charset="UTF-8">
-<title>ヘルスケア - ログイン画面</title>
+<title>Apollo - ログイン画面</title>
 
 <link rel="shortcut icon" href="images/icon.png">
+
+<link rel="stylesheet" href="css/index.css">
 
 <!-- CDN : Bootstrap CSS -->
 <link
@@ -22,11 +24,11 @@
 
 </head>
 
-<body>
+<body bgcolor = "black">
 <div class="container">
 
 <header>
-	<h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100">APOLLO</h1>
+	<h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon"></h1>
 </header>
 
 <section>
@@ -34,11 +36,20 @@
 		<p class="error">${errorMsg}</p>
 
 		<form action="LoginServlet" method="post">
-			<input class="form-control" type="text" name="name" placeholder="ユーザ名">
+			<input class="form-control" type="text" name="id" placeholder="ユーザID">
 			<input class="form-control" type="password" name="pass" placeholder="パスワード">
 			<br>
+			<div style = "inline-flex">
 			<input class="btn btn-lg btn-primary btn-block" type="submit" value="ログイン">
+			</div>
 		</form>
+		<form action ="LoginServlet" method="get">
+		<input type = "submit" class = "btn btn-lg btn-primary btn-block" href = "LoginServlet" value="新規登録">
+		</form>
+		
+		
+		
+		
 	</div>
 </section>
 
