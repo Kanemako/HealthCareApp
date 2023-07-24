@@ -51,7 +51,12 @@ public class RegisterServlet extends HttpServlet {
 		String pass2 = request.getParameter("pass2");
 		String gender = request.getParameter("gender");
 		String birthday = request.getParameter("birthday");
-		int age = Integer.parseInt(request.getParameter("age"));
+		int age;
+		try {
+			age = Integer.parseInt(request.getParameter("age"));
+		} catch (NumberFormatException e) {
+			age = 0;
+		}
 
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
