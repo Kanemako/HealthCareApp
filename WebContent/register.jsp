@@ -6,10 +6,14 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/input.css">
 <link rel="shortcut icon" href="images/icon.png">
+<link rel="stylesheet" href="css/index.css">
 <title>APOLLO 新規アカウント登録画面</title>
+
+
 </head>
 <body>
 <h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon">APOLLO</h1>
+
 <h2>登録手続き</h2>
 <p class="error">${registerErrorMsg}</p>
 <form action="RegisterServlet" method="post">
