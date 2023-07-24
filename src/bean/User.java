@@ -7,37 +7,20 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
 
-	private int userid, age;
+	private int age;
 	private String name, pass, gender, birthday;
 
-	public User(int id, String pass) {
-		this.userid = id;
+	public User(String name, String pass) {
+		this.name = name;
 		this.pass = pass;
 	}
 
-	public User(String pass, String name, String gender, String birthday, int age) {
+	public User(String name, String pass, String gender, String birthday, int age) {
 		this.pass = pass;
 		this.name = name;
 		this.gender = gender;
 		this.birthday = birthday;
 		this.age = age;
-	}
-
-	public User(int id, String pass, String name, String gender, String birthday, int age) {
-		this.userid = id;
-		this.pass = pass;
-		this.name = name;
-		this.gender = gender;
-		this.birthday = birthday;
-		this.age = age;
-	}
-
-	public int getUserid() {
-		return userid;
-	}
-
-	public void setUserid(int userid) {
-		this.userid = userid;
 	}
 
 	public String getName() {

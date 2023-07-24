@@ -19,7 +19,7 @@ public class LoginModel {
 	public User auth(User user, ArrayList<User> userList) {
 		// FIXME 固定パスワードで暫定実装中
 		for (User target : userList) {
-			if (user.getUserid() == target.getUserid()) {
+			if (user.getName().equals(target.getName())) {
 				if (user.getPass().equals(target.getPass())) {
 					// 認証成功
 					return target;

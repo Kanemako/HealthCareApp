@@ -33,13 +33,13 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// パラメータ取得
-		int id = Integer.parseInt(request.getParameter("id"));
+		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
 
 		// パラメータチェック
 		StringBuilder errorMsg = new StringBuilder();
-		if (id <= 0) {
-			errorMsg.append("ユーザーIDが入力されていません<br>");
+		if (name == null || name.length() <= 0) {
+			errorMsg.append("ユーザー名が入力されていません<br>");
 		}
 		if (pass == null || pass.length() == 0) {
 			errorMsg.append("パスワードが入力されていません<br>");
@@ -56,7 +56,7 @@ public class LoginServlet extends HttpServlet {
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
 
-		User user = new User(id, pass);
+		User user = new User(name, pass);
 		user = new LoginModel().auth(user, userList);
 
 		// 結果
