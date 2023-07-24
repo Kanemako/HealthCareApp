@@ -62,9 +62,10 @@ public class UsersDAO {
 		//		}
 
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-			String sql = "INSERT INTO USERS( NAME, PASS, GENDER, BIRTHDAY, AGE) VALUES(?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO USERDATE(NAME, PASS, GENDER, BIRTHDAY, AGE) VALUES(?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
+			System.out.println("デバック：" + user.getAge());
 			pStmt.setString(1, user.getName());
 			pStmt.setString(2, user.getPass());
 			pStmt.setString(3, user.getGender());

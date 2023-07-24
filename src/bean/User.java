@@ -16,8 +16,8 @@ public class User implements Serializable {
 	}
 
 	public User(String name, String pass, String gender, String birthday, int age) {
-		this.pass = pass;
 		this.name = name;
+		this.pass = pass;
 		this.gender = gender;
 		this.birthday = birthday;
 		this.age = age;
