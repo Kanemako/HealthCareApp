@@ -27,6 +27,9 @@ public class LoginServlet extends HttpServlet {
 		// パラメータ取得
 		String name = request.getParameter("name");
 		String pass = request.getParameter("pass");
+		String gender = request.getParameter("gender");
+		String birthday = request.getParameter("birthday");
+		int age = Integer.parseInt(request.getParameter("age"));
 
 		// パラメータチェック
 		StringBuilder errorMsg = new StringBuilder();
@@ -45,14 +48,14 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		// 処理
-		User user = new User(name, pass);
+		User user = new User(pass, name, gender, birthday, age);
 		boolean result = new LoginModel().auth(user);
 
 		// 結果
 		if (result) {
 			// 認証成功
 			HttpSession session = request.getSession();
-			session.setAttribute("user", new User(name, pass));
+			session.setAttribute("user", user);
 
 			// FIXME テスト用に仮のTODOデータを作成
 			ArrayList<Todo> todoList = new ArrayList<Todo>();

@@ -1,4 +1,4 @@
-package model;
+package bean;
 
 public class BMI {
 	private int userId, height, weight;

@@ -26,7 +26,7 @@ public class UsersDAO {
 		//		}
 
 		// SELECT文を準備
-		String sql = "SELECT ID,NAME,PASS,MAIL,AGE FROM USERS ORDER BY ID ASC";
+		String sql = "SELECT ID,PASS,NAME,GENDER,BIRTHDAY,AGE FROM USERS ORDER BY ID ASC";
 		// データベースに接続
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
 				PreparedStatement pStmt = conn.prepareStatement(sql);
@@ -37,11 +37,12 @@ public class UsersDAO {
 			// Employeeインスタンスに設定し、ArrayListインスタンスに追加
 			while (rs.next()) {
 				int id = rs.getInt("ID");
-				String name = rs.getString("NAME");
 				String pass = rs.getString("PASS");
-				String mail = rs.getString("MAIL");
-				String age = rs.getString("AGE");
-				User user = new User(id, name, pass, mail, age);
+				String name = rs.getString("NAME");
+				String gender = rs.getString("GENDER");
+				String birthday = rs.getString("BIRTHDAY");
+				int age = rs.getInt("AGE");
+				User user = new User(id, name, pass, gender, birthday, age);
 				Users.add(user);
 			}
 
@@ -62,13 +63,14 @@ public class UsersDAO {
 		//		}
 
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-			String sql = "INSERT INTO USERS(NAME, PASS, MAIL, AGE) VALUES(?, ?, ?, ?)";
+			String sql = "INSERT INTO USERS( PASS, NAME, GENDER, BIRTHDAY, AGE) VALUES(?, ?, ?, ?, ?)";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			pStmt.setString(1, user.getName());
-			pStmt.setString(2, user.getPass());
-			pStmt.setString(3, user.getMail());
-			pStmt.setString(4, user.getAge());
+			pStmt.setString(1, user.getPass());
+			pStmt.setString(2, user.getName());
+			pStmt.setString(3, user.getGender());
+			pStmt.setString(4, user.getBirthday());
+			pStmt.setInt(5, user.getAge());
 
 			int result = pStmt.executeUpdate();
 			if (result != 1) {

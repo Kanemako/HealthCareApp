@@ -8,8 +8,8 @@ import dao.UsersDAO;
 public class GetUsersLogic {
 	public List<User> execute() {
 		UsersDAO dao = new UsersDAO();
-		List<User> todoList = dao.findAll();
-		return todoList;
+		List<User> userList = dao.findAll();
+		return userList;
 	}
 
 }

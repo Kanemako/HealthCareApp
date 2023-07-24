@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.User;
 import model.AddUser;
 import model.GetUsersLogic;
 import model.RegisterLogic;
-import model.User;
 
 /**
  * Servlet implementation class RegisterServlet
@@ -49,8 +49,9 @@ public class RegisterServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String pass1 = request.getParameter("pass1");
 		String pass2 = request.getParameter("pass2");
-		String mail = request.getParameter("mail");
-		String age = request.getParameter("age");
+		String gender = request.getParameter("gender");
+		String birthday = request.getParameter("birthday");
+		int age = Integer.parseInt(request.getParameter("age"));
 
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
@@ -72,11 +73,7 @@ public class RegisterServlet extends HttpServlet {
 			errorMsg += "パスワードが一致しませんでした。もう一度お試しください。<br>";
 		}
 
-		if (mail.length() < 8) {
-			errorMsg += "メールアドレスを 8 文字以上で設定してください。<br>";
-		}
-
-		if (age.length() <= 0) {
+		if (age < 0) {
 			errorMsg += "年齢を設定してください。<br>";
 		}
 
@@ -86,7 +83,7 @@ public class RegisterServlet extends HttpServlet {
 		RequestDispatcher dispatcher;
 
 		if (errorMsg.length() == 0) {
-			User user = new User(name, pass1, mail, age);
+			User user = new User(pass1, name, gender, birthday, age);
 			new AddUser().addSort(user, userList);
 			dispatcher = request.getRequestDispatcher("index.jsp");
 		} else {
