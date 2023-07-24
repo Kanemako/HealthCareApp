@@ -26,7 +26,7 @@ public class UsersDAO {
 		//		}
 
 		// SELECT文を準備
-		String sql = "SELECT NAME,PASS,GENDER,BIRTHDAY,AGE FROM USERS ORDER BY ID ASC";
+		String sql = "SELECT NAME,PASS,GENDER,BIRTHDAY,AGE FROM USERDATE ORDER BY NAME ASC";
 		// データベースに接続
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
 				PreparedStatement pStmt = conn.prepareStatement(sql);

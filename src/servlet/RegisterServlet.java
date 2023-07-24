@@ -87,6 +87,8 @@ public class RegisterServlet extends HttpServlet {
 		}
 		RequestDispatcher dispatcher;
 
+		System.out.println("デバック：" + errorMsg);
+
 		if (errorMsg.length() == 0) {
 			User user = new User(name, pass1, gender, birthday, age);
 			new AddUser().addSort(user, userList);
