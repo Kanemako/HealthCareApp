@@ -36,7 +36,7 @@
 		<p class="error">${errorMsg}</p>
 
 		<form action="LoginServlet" method="post">
-			<input class="form-control" type="text" name="id" placeholder="ユーザID">
+			<input class="form-control" type="text" name="name" placeholder="ユーザID">
 			<input class="form-control" type="password" name="pass" placeholder="パスワード">
 			<br>
 			<div style = "inline-flex">
