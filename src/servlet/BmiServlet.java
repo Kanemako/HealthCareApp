@@ -48,6 +48,7 @@ public class BmiServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
 
 		String errorMsg = "";
 		int height = 0;
@@ -70,12 +71,11 @@ public class BmiServlet extends HttpServlet {
 		String msg = logic.chack(bmi);
 
 		GetBmiesLogic getBmiesLogic = new GetBmiesLogic();
-		Bmi bmiDate = getBmiesLogic.execute();
+		Bmi bmiDate = getBmiesLogic.execute(user);
 
-		Bmi target = new Bmi(day, height, weight);
+		Bmi target = new Bmi(user.getName(), day, height, weight);
 
-		User user = (User) session.getAttribute("user");
-		new AddBmi().addSort(bmiDate, target, user);
+		new AddBmi().addSort(bmiDate, target);
 
 	}
 
