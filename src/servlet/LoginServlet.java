@@ -56,6 +56,10 @@ public class LoginServlet extends HttpServlet {
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
 
+		if (userList == null || userList.size() <= 0) {
+			userList = new ArrayList<>();
+		}
+
 		User user = new User(name, pass);
 		user = new LoginModel().auth(user, userList);
 
