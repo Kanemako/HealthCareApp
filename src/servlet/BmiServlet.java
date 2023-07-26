@@ -81,12 +81,13 @@ public class BmiServlet extends HttpServlet {
 
 		GetBmiesLogic getBmiesLogic = new GetBmiesLogic();
 		ArrayList<Bmi> bmiList = getBmiesLogic.execute(user);
+		Bmi bmiDate = new Bmi(user.getName(), "", 1, 1, 1, "");
 
 		if (bmiList == null || bmiList.size() <= 0) {
 			bmiList = new ArrayList<>();
+		} else {
+			bmiDate = bmiList.get(0);
 		}
-		Bmi bmiDate = bmiList.get(0);
-
 		Bmi target = new Bmi(user.getName(), day, height, weight, bmi, msg);
 
 		new AddBmi().addSort(bmiDate, target, bmiList);
