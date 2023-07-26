@@ -5,12 +5,19 @@ body, html {
 	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
 		Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 	height: 100%;
+	
 	text-align: center;
+	margin-left:0px;
+    margin-right:0px;
+	background-image: url(../images/login_backimage.jpg);
+	background-position: top;
+}
+.app_icon{
+	width: 100px;
+	height: 100px;
+	border-radius:50% ;
 }
 
-.container {
-	max-width: 600px;
-}
 
 .block-left {
 	display: block;
@@ -32,9 +39,9 @@ body, html {
 
 /* カード */
 .card {
-	position: relative;
 	background-color: #F7F7F7;
-	margin: 0 auto 25px;
+	opacity: 0.95;
+	margin: 30%;
 	margin-top: 50px;
 	padding: 20px 25px 30px;
 	border-radius: 2px;
@@ -42,7 +49,7 @@ body, html {
 }
 
 .card-smart {
-	background-color: #cceeff;
+	/*background-color: #cceeff;*/
 	margin: 0 auto;
 	padding: 5px 10px 15px;
 }
@@ -68,4 +75,74 @@ body, html {
 	right: 10px;
 	width: 48px;
 	height: 48px;
+}
+/*ボタンデザイン*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+
+input.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+input.btn-flat {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  border-radius: 0;
+  background: #000;
+}
+
+input.btn-flat span {
+  position: relative;
+}
+
+input.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 150%;
+  height: 500%;
+
+  content: "";
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+
+  background: #00b7ee;
+}
+input.btn-flat:hover:before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }

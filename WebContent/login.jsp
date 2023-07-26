@@ -10,21 +10,10 @@
 
 <link rel="shortcut icon" href="images/icon.png">
 
-<link rel="stylesheet" href="css/index.css">
-
-<!-- CDN : Bootstrap CSS -->
-<link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-    crossorigin="anonymous"
-/>
-
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
-<body bgcolor = "black">
 <div class="container">
 
 <header>
@@ -37,12 +26,12 @@
 
 		<form action="LoginServlet" method="post">
 			<input class="form-control" type="text" name="name" placeholder="ユーザID">
-			<input class="form-control" type="password" name="pass" placeholder="パスワード">
+			<input class="form-control" type="password" name="pass" placeholder="パスワード"><br>
 			<br>
 			<div style = "inline-flex">
-			<input class="btn btn-lg btn-primary btn-block" type="submit" value="ログイン">
+			<input class="btn btn-lg btn-primary btn-block" type="submit" value="ログイン"><br>
 			</div>
-		</form>
+		</form><br>
 		<form action ="LoginServlet" method="get">
 		<input type = "submit" class = "btn btn-lg btn-primary btn-block" href = "LoginServlet" value="新規登録">
 		</form>
