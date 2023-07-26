@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* 全体 */
+body, html {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,
+		Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	height: 100%;
+	
+	text-align: center;
+	margin-left:0px;
+    margin-right:0px;
+	background-image: url(../images/login_backimage.jpg);
+	background-position: top;
+}
+
+.h1_title{
+	color:#ffd700;
+}
+h4{
+	
+}
+
+.app_icon{
+	width: 100px;
+	height: 100px;
+	border-radius:50% ;
+}
+
+
+.block-left {
+	display: block;
+	text-align: left;
+}
+
+.block-right {
+	display: block;
+	text-align: right;
+}
+
+/** エラーメッセージ */
+.error {
+	background-color: pink;
+	color: red;
+	margin: 10px auto;
+	border-radius: 2px;
+}
+
+/* カード */
+.card {
+	background-color: #F7F7F7;
+	opacity: 0.95;
+	margin: 30%;
+	margin-top: 50px;
+	padding: 20px 25px 30px;
+	border-radius: 2px;
+	box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.card-smart {
+	/*background-color: #cceeff;*/
+	margin: 0 auto;
+	padding: 5px 10px 15px;
+}
+
+.card-link-text {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+}
+
+/* プロフィール画像 */
+.profile-img {
+	display: block;
+	width: 96px;
+	height: 96px;
+	margin: 0 auto 10px;
+	border-radius: 50%;
+}
+
+.profile-fix-header {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 48px;
+	height: 48px;
+}

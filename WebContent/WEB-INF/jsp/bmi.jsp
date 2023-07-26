@@ -25,11 +25,11 @@
     <table>
       <tr>
        <td><label for="heightId">身長</label></td>
-       <td><input type="text" name="heigth" placeholder="cmで入力" id = "heigthId"></td>
+       <td><input type="text" name="height" placeholder="cmで入力" id = "heigthId"></td>
     </tr>
     <tr>
        <td><label for="weightId">体重</label></td>
-       <td><input type="text" name="weigth" placeholder="kgで入力" id="weightId"></td>
+       <td><input type="text" name="weight" placeholder="kgで入力" id="weightId"></td>
     </tr>
     </table>
     <td><input type="submit" value="登録" class="incert_btn"></td>

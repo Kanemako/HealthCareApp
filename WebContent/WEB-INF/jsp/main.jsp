@@ -18,7 +18,7 @@
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous" />
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/main.css">
 
 </head>
 
@@ -27,7 +27,8 @@
 
 		<header>
 			<h1>
-				<a href="MainServlet">APOLLO</a>
+			 <img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon">
+			 <a href="MainServlet" class = "h1_title">APOLLO</a>
 			</h1>
 			<a href="LogoutServlet" class="block-right">ログアウト</a>
 		</header>
@@ -76,7 +77,7 @@
 		</section>
 		<section>
 			<div class="card card-smart">
-				<h4>BMIリスト</h4>
+				<h4>BMIトピック</h4>
 				<a class="card-link-text" href="BmiServlet">BMI登録ページ</a>
 				<c:choose>
 					<c:when test="${bmiTopic == null}">
