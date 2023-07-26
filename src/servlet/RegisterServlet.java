@@ -58,6 +58,8 @@ public class RegisterServlet extends HttpServlet {
 			age = -1;
 		}
 
+		System.out.println(name + pass1 + pass2 + gender + birthday + age);
+
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
 

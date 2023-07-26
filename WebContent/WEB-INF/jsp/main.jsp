@@ -73,6 +73,42 @@
 		</c:choose>
 	</div>
 </section>
+<section>
+      <div class="card card-smart">
+          <h4>BMIリスト</h4>
+          <a class="card-link-text" href="BmiServlet">BMI登録ページ</a>
+            <c:choose>
+			      <c:when test="${bmiList == null}" >
+				      <p>登録されたBMIがありません</p>
+			      </c:when>
+
+			      <c:otherwise>
+				     <div class="table-responsive">
+					     <table id="targetTable" class="table table-striped">
+					     <thead>
+						    <tr>
+							  <th>日付</th>
+							  <th>身長</th>
+							  <th>体重</th>
+							  <th>BMI</th>
+							  <th>メッセージ</th>
+						    </tr>
+					     </thead>
+					     <tbody>
+						    <tr>
+							  <td>${bmiList.day}</td>
+							  <td>${bmiList.height}</td>
+							  <td>${bmiList.weight}</td>
+							  <td>${bmiList.bmi}</td>
+							  <td>${bmiList.msg}</td>
+						    </tr>
+					     </tbody>
+					     </table>
+				     </div>
+			     </c:otherwise>
+		   </c:choose>
+      </div>
+</section>
 
 <!-- CDN : Bootstrap Bundle with Popper -->
 <script
