@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Bmi;
 import bean.Todo;
 
 /**
@@ -31,6 +32,21 @@ public class MainServlet extends LoginCheckServlet {
 			// 先頭1件を取得する
 			request.setAttribute("todoTopic", todoList.get(0));
 		}
+
+		@SuppressWarnings("unchecked")
+		ArrayList<Bmi> bmiList = (ArrayList<Bmi>) session.getAttribute("bmiList");
+
+		ArrayList<Bmi> bmiTopic = new ArrayList<>();
+		if (bmiList != null && bmiList.size() > 0) {
+			for (int i = 0; i < 3; i++) {
+				bmiTopic.add(bmiList.get(i));
+				if (bmiList.size() == i + 1) {
+					break;
+				}
+			}
+
+		}
+		request.setAttribute("bmiTopic", bmiTopic);
 
 		request.getRequestDispatcher("/WEB-INF/jsp/main.jsp").forward(request, response);
 	}

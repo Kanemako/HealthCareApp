@@ -39,15 +39,13 @@ public class BmiServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		User user = (User) session.getAttribute("user");
-
-		GetBmiesLogic getBmiesLogic = new GetBmiesLogic();
-		ArrayList<Bmi> bmiList = getBmiesLogic.execute(user);
+		@SuppressWarnings("unchecked")
+		ArrayList<Bmi> bmiList = (ArrayList<Bmi>) session.getAttribute("bmiList");
 
 		if (bmiList == null || bmiList.size() <= 0) {
 			bmiList = new ArrayList<>();
 		}
-		request.setAttribute("bmiList", bmiList);
+		session.getAttribute("bmiList");
 		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}
@@ -94,7 +92,7 @@ public class BmiServlet extends HttpServlet {
 		new AddBmi().addSort(bmiDate, target, bmiList);
 
 		request.setAttribute("errorMsg", errorMsg);
-		request.setAttribute("bmiList", bmiList);
+		session.setAttribute("bmiList", bmiList);
 		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}
