@@ -14,7 +14,7 @@
     crossorigin="anonymous"
 />
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/index.css">
 <title>BMI登録画面</title>
 </head>
 <body>
@@ -32,8 +32,14 @@
        <td><input type="text" name="weigth" placeholder="kgで入力" id="weightId"></td>
     </tr>
     </table>
+    <td><input type="submit" value="登録" class="incert_btn"></td>
+  </form><br>
+  </form><br>
+<a href="http://localhost:8080/HealthCareApp/MainServlet" class = "btn btn-flat"><span>戻る</span></a>
+</form>
   
-  </form>
+  
+
 
 </body>
 </html>

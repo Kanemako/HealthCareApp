@@ -42,7 +42,7 @@
        <td>男性<input type="radio" name = "gender" value="男性">女性<input type="radio" name = "gender" value="女性"></td>
     </tr>
 </table>
- <td><input type="submit" value="登録" class="button"></td>
+ <td><input type="submit" value="登録" class="incert_btn"></td>
 </form><br>
 <a href="http://localhost:8080/HealthCareApp/RegisterServlet" class = "btn btn-flat"><span>ログイン画面へ</span></a>
 </form>

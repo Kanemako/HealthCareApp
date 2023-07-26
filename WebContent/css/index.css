@@ -111,3 +111,27 @@ a.btn-flat:hover:before {
   -webkit-transform: translateX(-70%) translateY(-25%) rotate(45deg);
   transform: translateX(-9%) translateY(-25%) rotate(45deg);
 }
+
+/*登録ボタンデザイン*/
+.incert_btn{
+    width:170px;
+    height:45px;
+    line-height:45px;
+    margin: auto;
+    text-decoration: none;
+    background:#000000;
+    text-align:center;
+    border-left:7px solid #141100;
+    color:#FFFFFF;
+    font-size:20px;
+    font-weight:bold;
+    transition: all 1s ease;
+}
+.incert_btn:hover{
+    background:#ffd700;
+    color:#FFFFFF;
+    margin-left:0px;
+    margin-top:0px;
+    border-left:1px solid #000;
+    box-shadow:19px 2px 2px 0px #DEDEDE ;
+}
