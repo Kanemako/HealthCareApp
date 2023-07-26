@@ -56,6 +56,7 @@ public class LoginServlet extends HttpServlet {
 		GetUsersLogic getUsersLogic = new GetUsersLogic();
 		ArrayList<User> userList = (ArrayList<User>) getUsersLogic.execute();
 
+		System.out.println(userList);
 		if (userList == null || userList.size() <= 0) {
 			userList = new ArrayList<>();
 		}
