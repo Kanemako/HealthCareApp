@@ -19,7 +19,7 @@
 </head>
 <body>
   <h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon">APOLLO</h1>
-  <h2>登録手続き</h2>
+  <h2>BMI登録手続き</h2>
   <p class="error">${errorMsg}</p>
   <form action="BmiServlet" method="post" id = "contact">
     <table>
@@ -37,7 +37,33 @@
   </form><br>
 <a href="http://localhost:8080/HealthCareApp/MainServlet" class = "btn btn-flat"><span>戻る</span></a>
 </form>
-  
+
+<section>
+	<div class="table-responsive">
+		<table id="targetTable" class="table table-striped">
+		<thead>
+			<tr>
+				<th>日付</th>
+				<th>身長</th>
+				<th>体重</th>
+				<th>BMI</th>
+				<th>メッセージ</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="bmi" items="${bmiList}">
+				<tr>
+					<td>${bmi.day}</td>
+					<td>${bmi.height}</td>
+					<td>${bmi.weight}</td>
+					<td>${bmi.bmi}</td>
+					<td>${bmi.msg }</td>
+				</tr>
+			</c:forEach>
+		</tbody>
+		</table>
+	</div>
+</section>
   
 
 
