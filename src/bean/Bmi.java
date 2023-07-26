@@ -2,22 +2,27 @@ package bean;
 
 public class Bmi {
 	private int height, weight;
-	private String name, day;
+	private String name, day, Msg;
+	private double bmi;
 
 	public Bmi() {
 	}
 
-	public Bmi(String day, int height, int weight) {
+	public Bmi(String day, int height, int weight, double bmi, String Msg) {
 		this.day = day;
 		this.height = height;
 		this.weight = weight;
+		this.bmi = bmi;
+		this.Msg = Msg;
 	}
 
-	public Bmi(String name, String day, int height, int weight) {
+	public Bmi(String name, String day, int height, int weight, double bmi, String Msg) {
 		this.name = name;
 		this.day = day;
 		this.height = height;
 		this.weight = weight;
+		this.bmi = bmi;
+		this.Msg = Msg;
 	}
 
 	public String getName() {
@@ -50,6 +55,22 @@ public class Bmi {
 
 	public void setDay(String day) {
 		this.day = day;
+	}
+
+	public String getMsg() {
+		return Msg;
+	}
+
+	public void setMsg(String msg) {
+		Msg = msg;
+	}
+
+	public double getBmi() {
+		return bmi;
+	}
+
+	public void setBmi(double bmi) {
+		this.bmi = bmi;
 	}
 
 }

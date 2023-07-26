@@ -2,6 +2,7 @@ package servlet;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.ServletException;
@@ -37,8 +38,18 @@ public class BmiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+
+		GetBmiesLogic getBmiesLogic = new GetBmiesLogic();
+		ArrayList<Bmi> bmiList = getBmiesLogic.execute(user);
+
+		if (bmiList == null || bmiList.size() <= 0) {
+			bmiList = new ArrayList<>();
+		}
+		request.setAttribute("bmiList", bmiList);
+		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
+
 	}
 
 	/**
@@ -71,11 +82,20 @@ public class BmiServlet extends HttpServlet {
 		String msg = logic.chack(bmi);
 
 		GetBmiesLogic getBmiesLogic = new GetBmiesLogic();
-		Bmi bmiDate = getBmiesLogic.execute(user);
+		ArrayList<Bmi> bmiList = getBmiesLogic.execute(user);
 
-		Bmi target = new Bmi(user.getName(), day, height, weight);
+		if (bmiList == null || bmiList.size() <= 0) {
+			bmiList = new ArrayList<>();
+		}
+		Bmi bmiDate = bmiList.get(0);
 
-		new AddBmi().addSort(bmiDate, target);
+		Bmi target = new Bmi(user.getName(), day, height, weight, bmi, msg);
+
+		new AddBmi().addSort(bmiDate, target, bmiList);
+
+		request.setAttribute("errorMsg", errorMsg);
+		request.setAttribute("bmiList", bmiList);
+		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}
 

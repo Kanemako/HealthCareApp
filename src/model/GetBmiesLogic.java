@@ -1,14 +1,16 @@
 package model;
 
+import java.util.ArrayList;
+
 import bean.Bmi;
 import bean.User;
 import dao.BmiDAO;
 
 public class GetBmiesLogic {
-	public Bmi execute(User user) {
+	public ArrayList<Bmi> execute(User user) {
 		BmiDAO dao = new BmiDAO();
-		Bmi bmiDate = dao.findAll(user);
-		return bmiDate;
+		ArrayList<Bmi> bmiList = dao.findAll(user);
+		return bmiList;
 	}
 
 }
