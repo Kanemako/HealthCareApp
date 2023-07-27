@@ -10,6 +10,9 @@
 <title>ヘルスケア - TODO画面</title>
 
 <link rel="shortcut icon" href="images/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 
 <!-- CDN : Bootstrap CSS -->
 <link
