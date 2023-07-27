@@ -51,7 +51,7 @@ public class TodoUpdateServlet extends LoginCheckServlet {
 			todo.setDeadline(deadline);
 		}
 		if (momentum != null && momentum.length() != 0) {
-			todo.setDeadline(momentum);
+			todo.setMomentum(momentum);
 		}
 
 		// 処理

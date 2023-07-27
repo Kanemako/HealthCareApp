@@ -26,7 +26,7 @@ public class TodoDAO {
 		//		}
 
 		// SELECT文を準備
-		String sql = "SELECT IMPORTANT,INFO,DEADLINE,MOMENTUM FROM TODOLIST WHERE NAME = ? ORDER BY IMPORTANT DESC,DEADLINE ASC";
+		String sql = "SELECT ID,IMPORTANT,INFO,DEADLINE,MOMENTUM FROM TODOLIST WHERE NAME = ? ORDER BY IMPORTANT DESC,DEADLINE ASC";
 		// データベースに接続
 		try {
 			Connection conn = DriverManager.getConnection(URL, USER, PASS);
@@ -44,7 +44,7 @@ public class TodoDAO {
 				int important = rs.getInt("IMPORTANT");
 				String info = rs.getString("INFO");
 				String deadline = rs.getString("DEADLINE");
-				String momentum = rs.getString("MOMENTM");
+				String momentum = rs.getString("MOMENTUM");
 				Todo todo = new Todo(id, important, info, deadline, momentum);
 				todoList.add(todo);
 			}
@@ -90,13 +90,14 @@ public class TodoDAO {
 	public void update(Todo todo) {
 		// TODO 自動生成されたメソッド・スタブ
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-			String sql = "UPDATE BMI SET(IMPORTANT, INFO, DEADLINE, MOMENTUM) = (?, ?, ?, ?) WHERE ID = ?";
+			String sql = "UPDATE TODOLIST SET(IMPORTANT, INFO, DEADLINE, MOMENTUM) = (?, ?, ?, ?) WHERE ID = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
 			pStmt.setInt(1, todo.getImportant());
 			pStmt.setString(2, todo.getInfo());
 			pStmt.setString(3, todo.getDeadline());
-			pStmt.setInt(4, todo.getId());
+			pStmt.setString(4, todo.getMomentum());
+			pStmt.setInt(5, todo.getId());
 
 			int result = pStmt.executeUpdate();
 			if (result != 1) {
