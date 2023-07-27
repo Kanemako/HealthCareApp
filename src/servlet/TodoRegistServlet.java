@@ -7,9 +7,10 @@ import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import bean.Todo;
+import bean.User;
+import dao.TodoDAO;
 import model.TodoModel;
 
 /**
@@ -26,6 +27,7 @@ public class TodoRegistServlet extends LoginCheckServlet {
 		String important = request.getParameter("important");
 		String info = request.getParameter("info");
 		String deadline = request.getParameter("deadline");
+		String momentum = request.getParameter("momentum");
 
 		// パラメータチェック
 		StringBuilder errorMsg = new StringBuilder();
@@ -47,20 +49,15 @@ public class TodoRegistServlet extends LoginCheckServlet {
 		}
 
 		// リスト取得
-		HttpSession session = request.getSession();
-		@SuppressWarnings("unchecked")
-		ArrayList<Todo> todoList = (ArrayList<Todo>) session.getAttribute("todoList");
+		User user = (User) request.getSession().getAttribute("user");
+		ArrayList<Todo> todoList = new TodoDAO().findAll(user);
 		if (todoList == null) {
 			// 取得できなかった場合は新規作成
 			todoList = new ArrayList<Todo>();
 		}
-
 		// 処理
-		Todo todo = new Todo(Integer.parseInt(important), info, deadline);
-		new TodoModel().regist(todoList, todo);
-
-		// リスト格納
-		session.setAttribute("todoList", todoList);
+		Todo todo = new Todo(Integer.parseInt(important), info, deadline, momentum);
+		new TodoModel().regist(todo, user);
 
 		response.sendRedirect("TodoServlet");
 		return;

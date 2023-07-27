@@ -1,10 +1,10 @@
 package model;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import bean.Todo;
-import bean.TodoComparator;
+import bean.User;
+import dao.TodoDAO;
 
 /**
  * Todoデータ操作を実行するクラス
@@ -13,29 +13,22 @@ public class TodoModel {
 
 	/**
 	 * 1件分のデータを登録する
-	 * @param todoList Todoリスト（結果は直接設定される）
 	 * @param todo 追加するTodo情報
+	 * @param user 
 	 */
-	public void regist(ArrayList<Todo> todoList, Todo todo) {
+	public void regist(Todo todo, User user) {
 		// データ追加
-		todoList.add(todo);
-
-		// リストの並び替え
-		Collections.sort(todoList, new TodoComparator());
+		new TodoDAO().create(todo, user);
 	}
 
 	/**
 	 * 1件分のデータを更新する
-	 * @param todoList Todoリスト（結果は直接設定される）
 	 * @param todo 更新するTodo情報
-	 * @param index 更新する添字
 	 */
-	public void update(ArrayList<Todo> todoList, Todo todo, int index) {
+	public void update(Todo todo) {
 		// 変更後データで更新
-		todoList.set(index, todo);
+		new TodoDAO().update(todo);
 
-		// リストの並び替え
-		Collections.sort(todoList, new TodoComparator());
 	}
 
 	/**
@@ -45,10 +38,8 @@ public class TodoModel {
 	 */
 	public void remove(ArrayList<Todo> todoList, int index) {
 		// データ削除
-		todoList.remove(index);
+		new TodoDAO().delete(todoList.get(index));
 
-		// リストの並び替え
-		Collections.sort(todoList, new TodoComparator());
 	}
 
 }

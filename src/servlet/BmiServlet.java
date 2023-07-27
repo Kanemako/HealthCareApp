@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import bean.Bmi;
 import bean.User;
+import dao.BmiDAO;
 import model.AddBmi;
 import model.BmiLogic;
 import model.GetBmiesLogic;
@@ -38,14 +39,13 @@ public class BmiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
-		@SuppressWarnings("unchecked")
-		ArrayList<Bmi> bmiList = (ArrayList<Bmi>) session.getAttribute("bmiList");
+		User user = (User) request.getSession().getAttribute("user");
+		ArrayList<Bmi> bmiList = new BmiDAO().findAll(user);
 
 		if (bmiList == null || bmiList.size() <= 0) {
 			bmiList = new ArrayList<>();
 		}
-		session.setAttribute("bmiList", bmiList);
+		request.setAttribute("bmiList", bmiList);
 		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}
@@ -96,7 +96,7 @@ public class BmiServlet extends HttpServlet {
 		new AddBmi().addSort(bmiDate, target, bmiList);
 
 		request.setAttribute("errorMsg", errorMsg);
-		session.setAttribute("bmiList", bmiList);
+		request.setAttribute("bmiList", bmiList);
 		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}

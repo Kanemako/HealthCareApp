@@ -7,20 +7,41 @@ import java.io.Serializable;
  */
 public class Todo implements Serializable {
 
+	/**ID*/
+	private int id;
 	/** 重要度 */
 	private int important;
-	/** 内容 */
+	/** メニュー */
 	private String info;
-	/** 期限 */
+	/** 予定 */
 	private String deadline;
+	/**目標運動量*/
+	private String momentum;
 
 	public Todo() {
 	}
 
-	public Todo(int important, String info, String deadline) {
+	public Todo(int important, String info, String deadline, String momentum) {
 		this.important = important;
 		this.info = info;
 		this.deadline = deadline;
+		this.momentum = momentum;
+	}
+
+	public Todo(int id, int important, String info, String deadline, String momentum) {
+		this.id = id;
+		this.important = important;
+		this.info = info;
+		this.deadline = deadline;
+		this.momentum = momentum;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public int getImportant() {
@@ -45,6 +66,14 @@ public class Todo implements Serializable {
 
 	public void setDeadline(String deadline) {
 		this.deadline = deadline;
+	}
+
+	public String getMomentum() {
+		return momentum;
+	}
+
+	public void setMomentum(String momentum) {
+		this.momentum = momentum;
 	}
 
 }

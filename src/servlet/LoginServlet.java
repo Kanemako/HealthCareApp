@@ -17,7 +17,6 @@ import bean.User;
 import model.GetBmiesLogic;
 import model.GetUsersLogic;
 import model.LoginModel;
-import model.TodoModel;
 
 /**
  * ログイン処理を実行するServlet
@@ -74,9 +73,7 @@ public class LoginServlet extends HttpServlet {
 
 			// FIXME テスト用に仮のTODOデータを作成
 			ArrayList<Todo> todoList = new ArrayList<Todo>();
-			new TodoModel().regist(todoList, new Todo(3, "OOPやる", "2021-07-21"));
-			new TodoModel().regist(todoList, new Todo(5, "WAC1やる", "2021-07-28"));
-			new TodoModel().regist(todoList, new Todo(4, "WAC2やる", "2021-10-20"));
+
 			session.setAttribute("todoList", todoList);
 
 			ArrayList<Bmi> bmiList = new GetBmiesLogic().execute(user);
