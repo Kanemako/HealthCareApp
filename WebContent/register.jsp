@@ -11,7 +11,10 @@
 
 </head>
 <body>
-<h1><img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon">APOLLO</h1>
+<h1>
+<img src = "images/app_image.png" alt = "アプリアイコン" width = "100" heigth = "100" class = "app_icon">
+<a>APOLLO</a>
+</h1>
 <h2>登録手続き</h2>
 
 <p class="error">${registerErrorMsg}</p>

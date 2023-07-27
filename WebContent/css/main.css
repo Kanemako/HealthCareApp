@@ -12,11 +12,25 @@ body, html {
 	background-position: top;
 }
 
+header{
+	padding-top: 10px;
+}
+a{
+	color: #ffd700;
+}
+a:hover{
+	cursor: pointer;
+	color: rgb(199, 206, 49);
+}
+
 .h1_title{
 	color:#ffd700;
 }
-h4{
+h3{
 	color: white;
+}
+h4{
+	color:black;
 }
 
 .app_icon{

@@ -14,7 +14,7 @@
     crossorigin="anonymous"
 />
 
-<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/bmi.css">
 <title>BMI登録画面</title>
 </head>
 <body>

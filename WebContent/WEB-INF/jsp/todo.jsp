@@ -9,7 +9,7 @@
 <meta charset="UTF-8">
 <title>ヘルスケア - TODO画面</title>
 
-<link rel="shortcut icon" href="images/favicon.ico">
+<link rel="shortcut icon" href="images/icon.png">
 
 <!-- CDN : Bootstrap CSS -->
 <link
@@ -19,7 +19,7 @@
     crossorigin="anonymous"
 />
 
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/todo.css">
 
 <script>
 function selectboxChange() {
@@ -37,7 +37,7 @@ function selectboxChange() {
 <div class="container">
 
 <header>
-	<h1><a href="MainServlet">へるすけあ</a></h1>
+	<h1><a href="MainServlet">APOLLO-TODO</a></h1>
 	<a href="LogoutServlet" class="block-right">ログアウト</a>
 	<a href="MainServlet" class="block-left">&lt;&lt;メインへ</a>
 	<img class="profile-img profile-fix-header" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />

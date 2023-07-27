@@ -35,7 +35,7 @@
 
 		<section>
 			<img class="profile-img" src="images/user_image.png" />
-			<h4>${user.name}</h4>
+			<h3>${user.name}</h3>
 		</section>
 
 		<hr>
