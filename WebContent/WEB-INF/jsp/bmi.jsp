@@ -51,13 +51,13 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach var="bmi" items="${bmiList}">
+			<c:forEach var="bmi" items= "${bmiList}">
 				<tr>
-					<td>${bmi.day}</td>
-					<td>${bmi.height}</td>
-					<td>${bmi.weight}</td>
-					<td>${bmi.bmi}</td>
-					<td>${bmi.msg }</td>
+					<td><c:out value="${bmi.day} /"></td>
+					<td><c:out value="${bmi.height}" /></td>
+					<td><c:out value="${bmi.weight}" /></td>
+					<td><c:out value="${bmi.bmi}" /></td>
+					<td><c:out value="${bmi.msg}" /></td>
 				</tr>
 			</c:forEach>
 		</tbody>

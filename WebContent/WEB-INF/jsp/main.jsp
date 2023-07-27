@@ -48,12 +48,12 @@
 				<a class="card-link-text" href="TodoServlet">>>TODOへ</a>
 
 				<c:choose>
-					<c:when test="${todoTopic == null}">
+					<c:when test="${todoTopic == null}>
 						<p>実行待ちのTODOはありません</p>
 					</c:when>
 
 					<c:otherwise>
-						<div class="table-responsive">
+						<div class = "table-responsive">
 							<table id="targetTable" class="table table-striped">
 								<thead>
 									<tr>
@@ -99,11 +99,11 @@
 								<tbody>
 									<c:forEach var="bmi" items="${bmiTopic }">
 										<tr>
-											<td>${bmi.day}</td>
-											<td>${bmi.height}</td>
-											<td>${bmi.weight}</td>
-											<td>${bmi.bmi}</td>
-											<td>${bmi.msg}</td>
+											<td><c:out value="${bmi.day} /"></td>
+											<td><c:out value="${bmi.height}" /></td>
+											<td><c:out value="${bmi.weight}" /></td>
+											<td><c:out value="${bmi.bmi}" /></td>
+											<td><c:out value="${bmi.msg}" /></td>
 										</tr>
 									</c:forEach>
 								</tbody>
