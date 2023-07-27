@@ -61,6 +61,7 @@ function selectboxChange() {
 		</select>
 		<input type="text" name="info" size="20" value="" placeholder="内容">
 		<input type="date" name="deadline">
+		<input type="text" name = "momentum"placeholder="目標運動量">
 		<input type="submit" value="登録">
 	</form>
 </section>
