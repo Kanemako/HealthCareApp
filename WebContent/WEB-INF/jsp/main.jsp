@@ -60,6 +60,7 @@
 										<th>重要度</th>
 										<th>内容</th>
 										<th>期日</th>
+										<th>運動量</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -67,6 +68,7 @@
 										<td>${todoTopic.important}</td>
 										<td>${todoTopic.info}</td>
 										<td>${todoTopic.deadline}</td>
+										<td>${todoTopic.momentum }</td>
 									</tr>
 								</tbody>
 							</table>
