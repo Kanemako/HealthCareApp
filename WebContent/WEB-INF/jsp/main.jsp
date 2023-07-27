@@ -82,7 +82,7 @@
 				<h4>BMIトピック</h4>
 				<a class="card-link-text" href="BmiServlet">BMI登録ページ</a>
 				<c:choose>
-					<c:when test="${bmiTopic.length() == 0}">
+					<c:when test="${bmiTopic.size() == 0}">
 						<p>登録されたBMIがありません</p>
 					</c:when>
 
