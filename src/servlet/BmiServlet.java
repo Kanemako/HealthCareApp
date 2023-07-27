@@ -45,7 +45,7 @@ public class BmiServlet extends HttpServlet {
 		if (bmiList == null || bmiList.size() <= 0) {
 			bmiList = new ArrayList<>();
 		}
-		session.getAttribute("bmiList");
+		session.setAttribute("bmiList", bmiList);
 		request.getRequestDispatcher("WEB-INF/jsp/bmi.jsp").forward(request, response);
 
 	}
@@ -86,8 +86,11 @@ public class BmiServlet extends HttpServlet {
 		if (bmiList == null || bmiList.size() <= 0) {
 			bmiList = new ArrayList<>();
 		} else {
+			System.out.println("BMILIST false");
 			bmiDate = bmiList.get(0);
 		}
+
+		System.out.println(day + height + weight + bmi + msg);
 		Bmi target = new Bmi(user.getName(), day, height, weight, bmi, msg);
 
 		new AddBmi().addSort(bmiDate, target, bmiList);

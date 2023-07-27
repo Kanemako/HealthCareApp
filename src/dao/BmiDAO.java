@@ -27,15 +27,15 @@ public class BmiDAO {
 		//		}
 
 		// SELECT文を準備
-		String sql = "SELECT DAY,HEIGHT,WEIGHT,MSG FROM BMI WHERE NAME = ? ORDER BY NAME, DAY";
+		String sql = "SELECT DAY,HEIGHT,WEIGHT,MSG FROM BMI WHERE NAME = ? ORDER BY NAME, DAY DESC";
 		// データベースに接続
-		try (Connection conn = DriverManager.getConnection(URL, USER, PASS);
-				PreparedStatement pStmt = conn.prepareStatement(sql);
-
-				// SELECTを実行し、結果表を取得
-				ResultSet rs = pStmt.executeQuery()) {
-
+		try {
+			Connection conn = DriverManager.getConnection(URL, USER, PASS);
+			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setString(1, user.getName());
+
+			// SELECTを実行し、結果表を取得
+			ResultSet rs = pStmt.executeQuery();
 
 			// 結果表に格納されたレコードの内容を
 			// Employeeインスタンスに設定し、ArrayListインスタンスに追加
@@ -90,15 +90,15 @@ public class BmiDAO {
 	public void update(Bmi bmiDate) {
 		// TODO 自動生成されたメソッド・スタブ
 		try (Connection conn = DriverManager.getConnection(URL, USER, PASS)) {
-			String sql = "UPDATE BMI SET(NAME, DAY, HEIGHT, WEIGHT, MSG) = (?, ?, ?, ?, ?)";
+			String sql = "UPDATE BMI SET(HEIGHT, WEIGHT, MSG) = (?, ?, ?) WHERE NAME = ? AND DAY = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			System.out.println("デバック：" + bmiDate.getName());
-			pStmt.setString(1, bmiDate.getName());
-			pStmt.setString(2, bmiDate.getDay());
-			pStmt.setInt(3, bmiDate.getHeight());
-			pStmt.setInt(4, bmiDate.getWeight());
-			pStmt.setString(5, bmiDate.getMsg());
+			System.out.println("デバック：" + bmiDate.getWeight());
+			pStmt.setInt(1, bmiDate.getHeight());
+			pStmt.setInt(2, bmiDate.getWeight());
+			pStmt.setString(3, bmiDate.getMsg());
+			pStmt.setString(4, bmiDate.getName());
+			pStmt.setString(5, bmiDate.getDay());
 
 			int result = pStmt.executeUpdate();
 			if (result != 1) {
