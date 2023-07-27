@@ -93,7 +93,6 @@ public class BmiDAO {
 			String sql = "UPDATE BMI SET(HEIGHT, WEIGHT, MSG) = (?, ?, ?) WHERE NAME = ? AND DAY = ?";
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 
-			System.out.println("デバック：" + bmiDate.getWeight());
 			pStmt.setInt(1, bmiDate.getHeight());
 			pStmt.setInt(2, bmiDate.getWeight());
 			pStmt.setString(3, bmiDate.getMsg());

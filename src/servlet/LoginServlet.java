@@ -11,8 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import bean.Bmi;
 import bean.Todo;
 import bean.User;
+import model.GetBmiesLogic;
 import model.GetUsersLogic;
 import model.LoginModel;
 import model.TodoModel;
@@ -76,6 +78,12 @@ public class LoginServlet extends HttpServlet {
 			new TodoModel().regist(todoList, new Todo(5, "WAC1やる", "2021-07-28"));
 			new TodoModel().regist(todoList, new Todo(4, "WAC2やる", "2021-10-20"));
 			session.setAttribute("todoList", todoList);
+
+			ArrayList<Bmi> bmiList = new GetBmiesLogic().execute(user);
+			if (bmiList == null || bmiList.size() <= 0) {
+				bmiList = new ArrayList<>();
+			}
+			session.setAttribute("bmiList", bmiList);
 
 			response.sendRedirect("MainServlet");
 			return;

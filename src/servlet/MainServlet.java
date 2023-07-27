@@ -35,7 +35,6 @@ public class MainServlet extends LoginCheckServlet {
 
 		@SuppressWarnings("unchecked")
 		ArrayList<Bmi> bmiList = (ArrayList<Bmi>) session.getAttribute("bmiList");
-
 		ArrayList<Bmi> bmiTopic = new ArrayList<>();
 		if (bmiList != null && bmiList.size() > 0) {
 			for (int i = 0; i < 3; i++) {
