@@ -28,6 +28,7 @@ function selectboxChange() {
 	document.getElementById("important").options[(5 - table.rows[row].cells[1].innerText)].selected = true;
 	document.getElementById('info').value = table.rows[row].cells[2].innerText;
 	document.getElementById('deadline').value = table.rows[row].cells[3].innerText;
+	document.getElementById('momentum').value = table.rows[row].cells[4].innerText;
 }
 </script>
 
@@ -75,6 +76,7 @@ function selectboxChange() {
 				<th>重要度</th>
 				<th>内容</th>
 				<th>期日</th>
+				<th>運動量</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -84,6 +86,7 @@ function selectboxChange() {
 					<td>${todo.important}</td>
 					<td>${todo.info}</td>
 					<td>${todo.deadline}</td>
+					<td>${todo.momentum }</td>
 				</tr>
 			</c:forEach>
 		</tbody>
@@ -110,6 +113,7 @@ function selectboxChange() {
 		</select>
 		<input type="text" name="info" id="info" size="20" value="">
 		<input type="date" name="deadline" id="deadline" value="">
+		<input type="text" name="momentum" id="momentum" value="">
 		<input type="submit" value="変更">
 	</form>
 </section>

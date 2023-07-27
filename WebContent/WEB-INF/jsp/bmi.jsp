@@ -15,6 +15,7 @@
     crossorigin="anonymous"
 />
 
+
 <link rel="stylesheet" href="css/bmi.css">
 <title>BMI登録画面</title>
 </head>
@@ -34,7 +35,6 @@
     </tr>
     </table>
     <td><input type="submit" value="登録" class="incert_btn"></td>
-  </form><br>
   </form><br>
 <a href="http://localhost:8080/HealthCareApp/MainServlet" class = "btn btn-flat"><span>戻る</span></a>
 </form>
@@ -65,7 +65,12 @@
 		</table>
 	</div>
 </section>
-  
+  <!-- CDN : Bootstrap Bundle with Popper -->
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"
+></script>
 
 
 </body>
