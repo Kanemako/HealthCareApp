@@ -59,6 +59,8 @@ function selectboxChange() {
 <hr>
 
 <section>
+   <div class="card card-smart">
+	<h4>登録</h4>
 	<form action="TodoRegistServlet" method="post">
 		<select name="important">
 			<option value="5">5</option>
@@ -72,12 +74,14 @@ function selectboxChange() {
 		<input type="text" name = "momentum"placeholder="目標運動量">
 		<input type="submit" value="登録">
 	</form>
+   </div>
 </section>
 
 <hr>
 
 <section>
-	<div class="table-responsive">
+ <div class="card card-smart">
+ 	<div class="table-responsive">
 		<table id="targetTable" class="table table-striped">
 		<thead>
 			<tr>
@@ -101,11 +105,13 @@ function selectboxChange() {
 		</tbody>
 		</table>
 	</div>
+  </div>
 </section>
 
-<hr><hr>
+<hr>
 
 <section>
+   <div class="card card-smart">
 	<h4>変更</h4>
 	<form action="TodoUpdateServlet" method="post">
 		<select name="index" id="index" onchange="selectboxChange();">
@@ -125,11 +131,13 @@ function selectboxChange() {
 		<input type="text" name="momentum" id="momentum" value="">
 		<input type="submit" value="変更">
 	</form>
+   </div>
 </section>
 
 <hr>
 
 <section>
+   <div class="card card-smart">
 	<h4>削除</h4>
 	<form action="TodoRemoveServlet" method="post">
 		<select name="index">
@@ -139,6 +147,7 @@ function selectboxChange() {
 		</select>
 		<input type="submit" value="削除">
 	</form>
+   </div>
 </section>
 
 </div>
