@@ -52,7 +52,7 @@ function selectboxChange() {
 	<img class="profile-img profile-fix-header" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
 </header>
 
-<h2>TODO</h2>
+<h2>筋肉スケジュール</h2>
 
 <p class="error">${errorMsg}</p>
 

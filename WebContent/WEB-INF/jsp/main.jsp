@@ -44,12 +44,12 @@
 
 		<section>
 			<div class="card card-smart">
-				<h4>TODO の トピック</h4>
+				<h4>筋肉スケジュール の トピック</h4>
 				<a class="card-link-text" href="TodoServlet">>>TODOへ</a>
 
 				<c:choose>
 					<c:when test="${todoTopic == null}">
-						<p>実行待ちのTODOはありません</p>
+						<p>実行待ちの筋肉スケジュールはありません</p>
 					</c:when>
 
 					<c:otherwise>
