@@ -72,7 +72,7 @@ function selectboxChange() {
 		<input type="text" name="info" size="20" value="" placeholder="内容">
 		<input type="date" name="deadline">
 		<input type="text" name = "momentum"placeholder="目標運動量">
-		<input type="submit" value="登録">
+		<input type="submit" value="登録" class="incert_btn">
 	</form>
    </div>
 </section>
@@ -118,7 +118,7 @@ function selectboxChange() {
 			<c:forEach items="${todoList}" varStatus="status">
 				<option value="${status.index}">${status.count}</option>
 			</c:forEach>
-		</select><br><br>
+		</select>
 		<select name="important" id="important">
 			<option value="5">5</option>
 			<option value="4">4</option>
@@ -129,7 +129,7 @@ function selectboxChange() {
 		<input type="text" name="info" id="info" size="20" value="">
 		<input type="date" name="deadline" id="deadline" value="">
 		<input type="text" name="momentum" id="momentum" value="">
-		<input type="submit" value="変更">
+		<input type="submit" value="変更" class="incert_btn">
 	</form>
    </div>
 </section>
@@ -145,7 +145,7 @@ function selectboxChange() {
 				<option value="${status.index}">${status.count}</option>
 			</c:forEach>
 		</select>
-		<input type="submit" value="削除">
+		<input type="submit" value="削除" class="incert_btn">
 	</form>
    </div>
 </section>
