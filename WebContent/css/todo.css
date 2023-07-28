@@ -35,6 +35,7 @@ h4{
 
 
 .block-left {
+	font-size: 15px;
 	color: #ffd700;
 	display: block;
 	text-align: left;
@@ -45,6 +46,7 @@ h4{
 }
 
 .block-right {
+	font-size: 15px;
 	color: #ffd700;
 	display: block;
 	text-align: right;
