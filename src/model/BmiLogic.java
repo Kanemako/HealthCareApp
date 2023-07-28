@@ -1,6 +1,9 @@
 package model;
 
 public class BmiLogic {
+	/*
+	 * bmiの算出
+	 */
 	public double calculation(int height, int weight) {
 		double hei = ((double) height * height) / 10000;
 		double bmi = weight / hei;
@@ -9,6 +12,9 @@ public class BmiLogic {
 
 	}
 
+	/*
+	 * bmiの判定
+	 */
 	public String chack(double bmi) {
 		if (bmi < 16) {
 			return "痩せすぎ";

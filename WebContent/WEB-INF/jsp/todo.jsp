@@ -43,10 +43,10 @@ function selectboxChange() {
 <header>
 	<h1><a href="MainServlet">
 	<div>
-  <span id="T">T</span>
-  <span id="O">O</span>
-  <span id="D">D</span>
-  <span id="O">O</span></div></a></h1>
+  <span id="T" class="title">T</span>
+  <span id="O" class="title">O</span>
+  <span id="D" class="title">D</span>
+  <span id="O" class="title">O</span></div></a></h1>
 	<a href="LogoutServlet" class="block-right">ログアウト</a>
 	<a href="MainServlet" class="block-left">&lt;&lt;メインへ</a>
 	<img class="profile-img profile-fix-header" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />

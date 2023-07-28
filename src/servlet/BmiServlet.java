@@ -31,7 +31,6 @@ public class BmiServlet extends HttpServlet {
 	 */
 	public BmiServlet() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -39,6 +38,7 @@ public class BmiServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		//bmiのデータ入手
 		User user = (User) request.getSession().getAttribute("user");
 		ArrayList<Bmi> bmiList = new BmiDAO().findAll(user);
 
@@ -55,7 +55,6 @@ public class BmiServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 
