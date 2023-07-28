@@ -72,7 +72,7 @@
     crossorigin="anonymous"
 ></script>
 
-<img src="../images/mans.png" width = "100" heigth = "100" class="keyframe7 animation">
+<img src="./images/mans.png" width = "40%" heigth = "40%" class="keyframe7 animation">
 
 
 </body>

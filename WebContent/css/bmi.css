@@ -178,6 +178,32 @@ a.btn-flat:hover:before {
     border-left:1px solid #000;
     box-shadow:19px 2px 2px 0px #DEDEDE ;
 }
-img{
-	
+/*アニメーション*/
+.animation{
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 1.5s;
+}
+
+.keyframe7 {
+  text-align: left;
+  animation-name: jump;
+  animation-name: slide;
+  animation-duration: 13s;
+}
+
+@keyframes jump{
+  0%   { transform:translate(0%, 60px) rotateX(50deg); }
+  100% { transform:translate(0%, 0%); }
+}
+
+@keyframes slide{
+	0%{
+  transform: translate(-980px);
+  }
+  
+  100% {
+  transform: translate(1010px);
+  }
 }
